@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Gallery</title>
+    <link rel="stylesheet" type = " text/CSS" href="/CSS/styles.css">
+    <link rel="icon" href="/media/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h1>My Video Gallery</h1>
+        <div class="row">
+            <div class="col">
+                <div class="feature-img">
+                    <img src="/media/seagulls.png" width="100%" >
+                    <img src="media/play.png" class="play-btn" onclick="playVideo('/media/seagulls.mp4')">
+
+                </div>
+                <h2 class="small-heading">Seagulls</h2>
+                <p class="content-txt">Gulls are seabirds of the family Laridae in the suborder Lari.
+                They are most closely related to aurks, skimmers and even more distantly to waders.</p>
+            </div>
+            <div class="col">
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="/media/deer.png" >
+                        <img src="media/play.png" class="play-btn" onclick="playVideo('/media/Animal.mp4')" >
+                    </div>
+                    <p><b>Deer</b><br> Deer are hoofed ruminant mammal forming the family Cervidae. 
+                    Deer live in varitey of biomes, ranging from tundra to the tropical rain forest.</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="/media/robin.png" >
+                        <img src="media/play.png" class="play-btn" onclick="playVideo('/media/Robin.mp4')">
+                    </div>
+                    <p><b>Robin</b><br> Robin is a small insectivorous passerine bird that belongs to the 
+                        chat subfamily of the Old World flycatcher family.</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="/media/fog.png" >
+                        <img src="media/play.png" class="play-btn" onclick="playVideo('/media/Background.mp4')">
+                    </div>
+                    <p><b>Snow</b><br>Snow comprises individual ice crystals that grow while suspend in the atmosphere usually 
+                        within the clouds and then fall, accumulating on the ground where they undergo further changes.</p>
+                </div>
+                <div class="small-img-row">
+                    <div class="small-img">
+                        <img src="/media/rock.png" >
+                        <img src="/media/play.png" class="play-btn" onclick="playVideo('/media/waterfall.mp4')">
+                    </div>
+                    <p><b>Waterfall</b><br> A waterfall is a area where water flows over a vertical drop or a series
+                    of steep drops in the course of a stream or river.</p>
+                </div>
+             
+                
+            </div>
+        </div>
+    </div>
+
+    <div class="video-player"  id = "videoPlayer">
+        <video width="100%" controls autoplay id = "myVideo">
+            <source src="media/seagulls.mp4" type="video/mp4">
+        </video>
+        <img src="/media/close.png" class="close-btn" onclick="stopVideo()">
+    </div>
+
+
+    <script>
+        var videoPlayer = document.getElementById("videoPlayer");
+        var myVideo = document.getElementById("myVideo");
+
+        function stopVideo(){
+            videoPlayer.style.display = "none";
+        }
+
+        function playVideo(file){
+            myVideo.src = file;
+            videoPlayer.style.display = "block";
+        }
+
+
+    </script>
+
+</body>
+</html>
